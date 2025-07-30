@@ -2,9 +2,9 @@
 
 ## 简介 / Introduction
 
-**ComfyUI Prompt Helper** 是一个专为 ComfyUI 设计的自定义节点插件，提供强大的视频提示词生成功能。该插件支持中英文双语界面，基于 Denge AI 的视频提示词生成工具开发，帮助用户快速构建专业的电影化提示词。
+**ComfyUI Prompt Helper** 是一个专为 ComfyUI 设计的自定义节点插件，提供强大的视频提示词生成功能。该插件支持中英文双语界面，帮助用户快速构建专业的电影化提示词。
 
-**ComfyUI Prompt Helper** is a custom node plugin designed for ComfyUI that provides powerful video prompt generation capabilities. This plugin supports bilingual Chinese-English interface, developed based on Denge AI's video prompt generation tool, helping users quickly build professional cinematic prompts.
+**ComfyUI Prompt Helper** is a custom node plugin designed for ComfyUI that provides powerful video prompt generation capabilities. This plugin supports bilingual Chinese-English interface, helping users quickly build professional cinematic prompts.
 
 ## 功能特点 / Features
 
@@ -40,7 +40,7 @@
 
 ```bash
 cd ComfyUI/custom_nodes
-git clone https://github.com/YOUR_USERNAME/ComfyUI_Prompt_Helper.git
+git clone https://github.com/flybirdxx/ComfyUI_Prompt_Helper.git
 ```
 
 ### 方法二：手动下载
