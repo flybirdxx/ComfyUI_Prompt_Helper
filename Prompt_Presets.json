@@ -2,6 +2,7 @@
     "zh": {
         "shot_size": {
             "none": "",
+            "random": "random",
             "medium_wide_shot": "中景",
             "wide_shot": "全景", 
             "medium_shot": "中景",
@@ -20,6 +21,7 @@
         },
         "lighting_type": {
             "none": "",
+            "random": "random",
             "natural_light": "自然光",
             "studio_lighting": "影棚灯光",
             "soft_lighting": "柔光", 
@@ -35,6 +37,7 @@
         },
         "light_source": {
             "none": "",
+            "random": "random",
             "sunlight": "阳光",
             "moonlight": "月光", 
             "candlelight": "烛光",
@@ -50,6 +53,7 @@
         },
         "color_tone": {
             "none": "",
+            "random": "random",
             "warm_tones": "暖色调",
             "cool_tones": "冷色调",
             "neutral_tones": "中性色调",
@@ -65,6 +69,7 @@
         },
         "camera_angle": {
             "none": "",
+            "random": "random",
             "eye_level": "平视角度",
             "high_angle": "俯视角度",
             "low_angle": "仰视角度",
@@ -80,6 +85,7 @@
         },
         "lens": {
             "none": "",
+            "random": "random",
             "wide_angle": "广角镜头",
             "ultra_wide": "超广角镜头",
             "telephoto": "长焦镜头",
@@ -94,6 +100,7 @@
         },
         "camera_movement_basic": {
             "none": "",
+            "random": "random",
             "static_shot": "静态镜头",
             "pan_left": "向左摇摆",
             "pan_right": "向右摇摆",
@@ -107,6 +114,7 @@
         },
         "camera_movement_advanced": {
             "none": "",
+            "random": "random",
             "dolly_in": "推轨进",
             "dolly_out": "推轨出", 
             "dolly_left": "推轨左移",
@@ -122,6 +130,7 @@
         },
         "time_of_day": {
             "none": "",
+            "random": "random",
             "dawn": "黎明",
             "sunrise": "日出",
             "morning": "上午",
@@ -137,6 +146,7 @@
         },
         "motion": {
             "none": "",
+            "random": "random",
             "slow_motion": "慢动作",
             "fast_motion": "快动作",
             "time_lapse": "延时摄影",
@@ -151,6 +161,7 @@
         },
         "visual_effects": {
             "none": "",
+            "random": "random",
             "lens_flare": "镜头光晕",
             "light_rays": "光线",
             "smoke": "烟雾效果",
@@ -166,6 +177,7 @@
         },
         "stylization_visual_style": {
             "none": "",
+            "random": "random",
             "cinematic": "电影风格",
             "documentary": "纪录片风格",
             "vintage": "复古风格",
@@ -181,6 +193,7 @@
         },
         "character_emotion": {
             "none": "",
+            "random": "random",
             "happy": "开心表情",
             "sad": "悲伤表情",
             "angry": "愤怒表情",
@@ -196,6 +209,7 @@
         },
         "composition": {
             "none": "",
+            "random": "random",
             "rule_of_thirds": "三分法构图",
             "center_composition": "中心构图",
             "symmetrical": "对称构图",
@@ -213,6 +227,7 @@
     "en": {
         "shot_size": {
             "none": "",
+            "random": "random",
             "medium_wide_shot": "medium wide shot",
             "wide_shot": "wide shot", 
             "medium_shot": "medium shot",
@@ -231,6 +246,7 @@
         },
         "lighting_type": {
             "none": "",
+            "random": "random",
             "natural_light": "natural lighting",
             "studio_lighting": "studio lighting",
             "soft_lighting": "soft lighting", 
@@ -246,6 +262,7 @@
         },
         "light_source": {
             "none": "",
+            "random": "random",
             "sunlight": "sunlight",
             "moonlight": "moonlight", 
             "candlelight": "candlelight",
@@ -261,6 +278,7 @@
         },
         "color_tone": {
             "none": "",
+            "random": "random",
             "warm_tones": "warm color tones",
             "cool_tones": "cool color tones",
             "neutral_tones": "neutral color tones",
@@ -276,6 +294,7 @@
         },
         "camera_angle": {
             "none": "",
+            "random": "random",
             "eye_level": "eye level angle",
             "high_angle": "high angle shot",
             "low_angle": "low angle shot",
@@ -291,6 +310,7 @@
         },
         "lens": {
             "none": "",
+            "random": "random",
             "wide_angle": "wide angle lens",
             "ultra_wide": "ultra wide lens",
             "telephoto": "telephoto lens",
@@ -305,6 +325,7 @@
         },
         "camera_movement_basic": {
             "none": "",
+            "random": "random",
             "static_shot": "static shot",
             "pan_left": "pan left",
             "pan_right": "pan right",
@@ -318,6 +339,7 @@
         },
         "camera_movement_advanced": {
             "none": "",
+            "random": "random",
             "dolly_in": "dolly in",
             "dolly_out": "dolly out", 
             "dolly_left": "dolly left",
@@ -333,6 +355,7 @@
         },
         "time_of_day": {
             "none": "",
+            "random": "random",
             "dawn": "dawn",
             "sunrise": "sunrise",
             "morning": "morning",
@@ -348,6 +371,7 @@
         },
         "motion": {
             "none": "",
+            "random": "random",
             "slow_motion": "slow motion",
             "fast_motion": "fast motion",
             "time_lapse": "time lapse",
@@ -362,6 +386,7 @@
         },
         "visual_effects": {
             "none": "",
+            "random": "random",
             "lens_flare": "lens flare",
             "light_rays": "light rays",
             "smoke": "smoke effects",
@@ -377,6 +402,7 @@
         },
         "stylization_visual_style": {
             "none": "",
+            "random": "random",
             "cinematic": "cinematic style",
             "documentary": "documentary style",
             "vintage": "vintage style",
@@ -392,6 +418,7 @@
         },
         "character_emotion": {
             "none": "",
+            "random": "random",
             "happy": "happy expression",
             "sad": "sad expression",
             "angry": "angry expression",
@@ -407,6 +434,7 @@
         },
         "composition": {
             "none": "",
+            "random": "random",
             "rule_of_thirds": "rule of thirds composition",
             "center_composition": "center composition",
             "symmetrical": "symmetrical composition",

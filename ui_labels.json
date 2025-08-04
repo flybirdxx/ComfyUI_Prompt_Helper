@@ -23,7 +23,8 @@
         "format_professional": "专业",
         "format_simple": "简单",
         "format_detailed": "详细",
-        "none_option": "无"
+        "none_option": "无",
+        "random_option": "随机"
     },
     "en": {
         "language": "Language",
@@ -49,7 +50,8 @@
         "format_professional": "Professional",
         "format_simple": "Simple", 
         "format_detailed": "Detailed",
-        "none_option": "none"
+        "none_option": "none",
+        "random_option": "random"
     },
     "messages": {
         "zh": {

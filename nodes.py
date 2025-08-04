@@ -9,6 +9,7 @@
 import json
 import os
 import locale
+import random
 
 # 获取当前文件所在的目录路径
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -94,9 +95,14 @@ class WanVideoPromptGenerator:
                     none_text = UI_LABELS_DATA[language].get("none_option", "none")
                     options.append(none_text)
                 
+                # 添加 "random" 选项，显示为本地化的文本
+                if "random" in category_data:
+                    random_text = UI_LABELS_DATA[language].get("random_option", "random")
+                    options.append(random_text)
+                
                 # 添加其他选项的本地化文本
                 for key, value in category_data.items():
-                    if key != "none" and value:  # 跳过none和空值
+                    if key not in ["none", "random"] and value:  # 跳过none、random和空值
                         options.append(value)
                 
                 return options
@@ -169,6 +175,10 @@ class WanVideoPromptGenerator:
                 none_text = UI_LABELS_DATA[language].get("none_option", "none")
                 value_to_key[none_text] = "none"
                 
+                # 处理"随机"选项
+                random_text = UI_LABELS_DATA[language].get("random_option", "random")
+                value_to_key[random_text] = "random"
+                
                 # 处理prompt_format选项的映射
                 labels = UI_LABELS[language]
                 value_to_key[labels["format_professional"]] = "professional"
@@ -191,29 +201,7 @@ class WanVideoPromptGenerator:
         # 提取并转换参数值
         user_prompt = params.get("user_prompt", UI_LABELS[language]["default_prompt"])
         
-        # 对于选项类型的参数，需要将本地化文本转换回键名
-        def convert_value_to_key(value, default="none"):
-            if not value:
-                return default
-            return value_to_key.get(value, value)
-        
-        shot_size = convert_value_to_key(params.get("shot_size"))
-        lighting_type = convert_value_to_key(params.get("lighting_type"))
-        light_source = convert_value_to_key(params.get("light_source"))
-        color_tone = convert_value_to_key(params.get("color_tone"))
-        camera_angle = convert_value_to_key(params.get("camera_angle"))
-        lens = convert_value_to_key(params.get("lens"))
-        camera_movement_basic = convert_value_to_key(params.get("camera_movement_basic"))
-        camera_movement_advanced = convert_value_to_key(params.get("camera_movement_advanced"))
-        time_of_day = convert_value_to_key(params.get("time_of_day"))
-        motion = convert_value_to_key(params.get("motion"))
-        visual_effects = convert_value_to_key(params.get("visual_effects"))
-        stylization_visual_style = convert_value_to_key(params.get("stylization_visual_style"))
-        character_emotion = convert_value_to_key(params.get("character_emotion"))
-        composition = convert_value_to_key(params.get("composition"))
-        prompt_format = convert_value_to_key(params.get("prompt_format"), "professional")
-        
-        # 验证语言参数
+        # 验证语言参数并获取预设数据
         if language not in VIDEO_PRESETS:
             messages = UI_LABELS_DATA.get("messages", {}).get(DEFAULT_LANGUAGE, {})
             unsupported_msg = messages.get("unsupported_language", "Unsupported language")
@@ -224,6 +212,47 @@ class WanVideoPromptGenerator:
         # 获取当前语言的预设数据
         current_presets = VIDEO_PRESETS[language]
         current_labels = UI_LABELS[language]
+        
+        # 对于选项类型的参数，需要将本地化文本转换回键名，并处理随机选择
+        def convert_value_to_key(value, category, default="none"):
+            if not value:
+                return default
+            
+            # 获取键名
+            key = value_to_key.get(value, value)
+            
+            # 如果选择了随机，从该分类中随机选择一个非none、非random的选项
+            if key == "random" and category in current_presets:
+                available_options = [k for k in current_presets[category].keys() 
+                                   if k not in ["none", "random"] and current_presets[category][k]]
+                if available_options:
+                    key = random.choice(available_options)
+                    print(f"[随机选择] {category}: {current_presets[category][key]}")
+                else:
+                    key = "none"
+            
+            return key
+        
+        shot_size = convert_value_to_key(params.get("shot_size"), "shot_size")
+        lighting_type = convert_value_to_key(params.get("lighting_type"), "lighting_type")
+        light_source = convert_value_to_key(params.get("light_source"), "light_source")
+        color_tone = convert_value_to_key(params.get("color_tone"), "color_tone")
+        camera_angle = convert_value_to_key(params.get("camera_angle"), "camera_angle")
+        lens = convert_value_to_key(params.get("lens"), "lens")
+        camera_movement_basic = convert_value_to_key(params.get("camera_movement_basic"), "camera_movement_basic")
+        camera_movement_advanced = convert_value_to_key(params.get("camera_movement_advanced"), "camera_movement_advanced")
+        time_of_day = convert_value_to_key(params.get("time_of_day"), "time_of_day")
+        motion = convert_value_to_key(params.get("motion"), "motion")
+        visual_effects = convert_value_to_key(params.get("visual_effects"), "visual_effects")
+        stylization_visual_style = convert_value_to_key(params.get("stylization_visual_style"), "stylization_visual_style")
+        character_emotion = convert_value_to_key(params.get("character_emotion"), "character_emotion")
+        composition = convert_value_to_key(params.get("composition"), "composition")
+        
+        # prompt_format不需要随机功能，单独处理
+        prompt_format_value = params.get("prompt_format")
+        prompt_format = value_to_key.get(prompt_format_value, "professional") if prompt_format_value else "professional"
+        
+
         
         # 收集所有选择的元素
         selected_elements = []
