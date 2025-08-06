@@ -10,6 +10,7 @@ import json
 import os
 import locale
 import random
+import time
 
 # 获取当前文件所在的目录路径
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -149,6 +150,17 @@ class WanVideoPromptGenerator:
     CATEGORY = "self_node/Video"
     
     def generate_video_prompt(self, **kwargs):
+        # 处理随机种子
+        seed = kwargs.get("seed", -1)
+        if seed == -1:
+            # 使用当前时间+随机数作为种子，确保每次都不同
+            import hashlib
+            timestamp = str(time.time())
+            # 使用时间戳和一个额外的随机因子来生成更好的种子
+            seed_str = timestamp + str(random.randint(0, 999999))
+            seed = int(hashlib.md5(seed_str.encode()).hexdigest()[:8], 16) % 2147483647
+        random.seed(seed)
+        print(f"[视频提示词生成器] 使用随机种子: {seed}")
         """生成视频提示词"""
         
         # 创建参数映射以支持本地化的参数名称
@@ -160,7 +172,7 @@ class WanVideoPromptGenerator:
                 if en_key in ["language", "user_prompt", "shot_size", "lighting_type", "light_source", 
                              "color_tone", "camera_angle", "lens", "camera_movement_basic", 
                              "camera_movement_advanced", "time_of_day", "motion", "visual_effects",
-                             "stylization_visual_style", "character_emotion", "composition", "prompt_format"]:
+                             "stylization_visual_style", "character_emotion", "composition", "prompt_format", "seed"]:
                     param_mapping[localized_name] = en_key
         
         # 创建选项值的反向映射（本地化文本 -> 键名）

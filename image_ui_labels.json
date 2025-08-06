@@ -1,0 +1,78 @@
+{
+    "zh": {
+        "language": "语言",
+        "user_prompt": "主要描述",
+        "subject_type": "主题类型",
+        "art_style": "艺术风格",
+        "mood_atmosphere": "情绪氛围",
+        "color_palette": "色彩搭配",
+        "lighting": "光照效果",
+        "composition": "构图方式",
+        "camera_settings": "相机设置",
+        "texture_detail": "质感细节",
+        "environment": "环境场景",
+        "quality_enhancement": "质量增强",
+        "artist_style": "艺术家风格",
+        "prompt_format": "提示词格式",
+        "seed": "随机种子",
+        "default_prompt": "一个美丽的场景",
+        "professional_suffix": "，高质量，精美细节，专业水准",
+        "detailed_suffix": "。精致细节，艺术级质量，完美构图",
+        "format_professional": "专业",
+        "format_simple": "简单",
+        "format_detailed": "详细",
+        "none_option": "无",
+        "random_option": "随机"
+    },
+    "en": {
+        "language": "Language",
+        "user_prompt": "Main Description",
+        "subject_type": "Subject Type",
+        "art_style": "Art Style",
+        "mood_atmosphere": "Mood & Atmosphere",
+        "color_palette": "Color Palette",
+        "lighting": "Lighting",
+        "composition": "Composition",
+        "camera_settings": "Camera Settings",
+        "texture_detail": "Texture & Detail",
+        "environment": "Environment",
+        "quality_enhancement": "Quality Enhancement",
+        "artist_style": "Artist Style",
+        "prompt_format": "Prompt Format",
+        "seed": "Random Seed",
+        "default_prompt": "A beautiful scene",
+        "professional_suffix": ", high quality, fine details, professional level",
+        "detailed_suffix": ". Exquisite details, artistic quality, perfect composition",
+        "format_professional": "Professional",
+        "format_simple": "Simple",
+        "format_detailed": "Detailed",
+        "none_option": "none",
+        "random_option": "random"
+    },
+    "messages": {
+        "zh": {
+            "load_message": "[图片提示词生成器] 已加载以下节点:",
+            "detected_locale": "检测到中文语言环境",
+            "using_default": "语言检测失败，使用默认中文",
+            "unsupported_language": "不支持的语言",
+            "fallback_to_default": "，回退到默认语言",
+            "generated_prompt": "已生成包含",
+            "artistic_elements": "个艺术元素的提示词",
+            "selected_elements": "选中的元素"
+        },
+        "en": {
+            "load_message": "[Image Prompt Generator] Loaded the following nodes:",
+            "detected_locale": "Detected non-Chinese locale",
+            "using_default": "Language detection failed, using default Chinese",
+            "unsupported_language": "Unsupported language",
+            "fallback_to_default": ", fallback to default language",
+            "generated_prompt": "Generated prompt with",
+            "artistic_elements": "artistic elements",
+            "selected_elements": "Selected elements"
+        }
+    },
+    "display_names": {
+        "zh": "🎨 图片提示词生成器",
+        "en": "🎨 Image Prompt Generator"
+    }
+}
